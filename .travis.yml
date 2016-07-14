@@ -1,0 +1,20 @@
+# Definição da linguagem
+ 2 language: java
+ 3 
+ 4 # Cada comando no script é como um comando no terminal.
+ 5 script: mvn clean install #exclui o diretório de destino e recria todos os frascos no local.
+ 6 
+ 7 # Definição de variáveis de ambiente
+ 8 env:
+ 9   global:
+10     - JAVA_HOME=/usr/lib/jvm/java-8-oracle
+11 
+12 # É possível testar múltiplas JDKs
+13 jdk:
+14   - oraclejdk8
+15   - oraclejdk7
+16 
+17 # Uma vez que é desnecessário instalar as dependências
+18 # duas vezes, o comando abaixo pula a primeira instalação.
+19 # O Maven irá baixar as dependências através do 'script' de qualquer maneira.
+20 install: /bin/true
