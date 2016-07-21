@@ -137,13 +137,18 @@ public class Validacao {
 								"Invalido", JOptionPane.ERROR_MESSAGE);
 				return null;
 			}
+		} catch (NullPointerException exNullPointer) {
+			JOptionPane.showMessageDialog(null,
+							"Erro de conversão de Quantidade de Gravidez!\nDigite numeros inteiros positivos",
+							"Invalido", JOptionPane.ERROR_MESSAGE);
+			return null;
 		} catch (NumberFormatException exNumber) {
 			JOptionPane.showMessageDialog(null,
 							"Quantidade de Gravidez Inadequada!\nDigite numeros inteiros positivos",
 							"Invalido", JOptionPane.ERROR_MESSAGE);
 			return null;
 		}
-		return quantGravInt;
-	}
-
+		
+			return quantGravInt;
+		}
 }
